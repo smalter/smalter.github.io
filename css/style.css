@@ -711,3 +711,46 @@ main section + section {
   background-position: center;
   margin-right: 9px;
 }
+
+@media only screen and (max-width: 1216px) {
+  main {
+    width: calc(692px + 60px);
+  }
+
+  main section:first-child {
+    width: 230px;
+  }
+
+  main section:nth-child(2) {
+    width: 422px;
+  }
+
+  main section:nth-child(3) {
+    clear: both;
+    padding-left: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  main section:first-child,
+  main section:nth-child(2),
+  main section:nth-child(3),
+  main section + section {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  main section + section {
+    margin-top: 50px;
+  }
+}
