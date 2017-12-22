@@ -622,10 +622,22 @@ main section + section {
   padding: 12px 0;
   counter-increment: companies;
   position: relative;
+  padding-left: 45px;
 }
 
 .companies li + li {
   border-top: 2px dotted;  
+}
+
+.companies li .logo {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background: #e0e0e0;
+  position: absolute;
+  left: 0;
+  top: -16px;
+  border-radius: 4px;
 }
 
 .companies li .name {
