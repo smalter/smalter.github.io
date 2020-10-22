@@ -514,17 +514,16 @@ body {
 }
 
 main {
-  padding: 35px 30px;
-  max-width: 1216px;
-  margin: 30px auto;
+  padding: 50px 30px 40px;
+  margin: 0px auto;
   overflow: hidden;
   box-sizing: border-box;
   background: #fff;
   position: relative;
+  width: 1000px;
 }
 
 main section {
-  width: calc(40% - 40px);
   float: left;
   box-sizing: border-box;
   font-size: 16.5px;
@@ -532,72 +531,96 @@ main section {
 }
 
 main section:first-child {
-  width: 20%;
+  width: 35%;
   font-size: 15px;
 }
 
+main section:nth-child(2) {
+  width: 65%;
+  padding-left: 30px;
+  float: right;
+}
+
+main section:nth-child(3) {
+  float: left;
+}
+
+main section:nth-child(4),
+main section:nth-child(5){
+  clear: both;
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
+  margin-top: 30px;
+}
+
 main section + section {
-  margin-left: 40px;
-  padding-left: 40px;
+  /*margin-left: 40px;*/
+  /*padding-left: 40px;*/
 }
 
 .walter {
-  width: 100px;
+  width: 120px;
   margin-bottom: 10px;
   float: left;
-  margin-right: 20px;
   border-radius: 50%;
-}
-
-.title.separated {
-  margin-top: 50px;
-}
-
-.title {
-  color: #CA0028;
-  font-size: 30px;
-  font-weight: 300;
-  margin: 0px 0 25px;
-  line-height: 1.1;
-  text-transform: uppercase;
-  font-size: 24px;
-  border: 2px solid;
-  padding: 3px 10px;
-  border: 0;
-  padding: 0;
-}
-
-.title .chinese {
-  display: block;
-  font-weight: 700;
-  color: #222;
-}
-
-.logo {
-  margin-top: 30px;
-  width: 220px;
-  max-width: 100%;
-  margin-bottom: 30px;
-}
-
-.description {
-  font-size: 22px;
-  line-height: 1.4;
+  padding: 10px;
+  box-sizing: border-box;
+  /*box-shadow: 0 0 2px rgba(0,0,0,0.2);*/
+  /*border: 3px dotted #E20B36;*/
+  background-color: #f0f0f0;
 }
 
 .about {
-  font-size: 16.5px;
-  line-height: 1.4;
+  font-size: 19px;
+  line-height: 1.35;
+  margin-left: 140px;
+  color: #222;
 }
 
 .about + .about {
-  margin-top: 30px;
+  margin-top: 12px;
 }
 
 .about .highlight {
   font-weight: 700;
 }
 
+.title {
+  color: #E20B36;
+  font-weight: 300;
+  margin: 0px 0 25px;
+  line-height: 1.1;
+  font-size: 27.5px;
+  border: 2px solid;
+  padding: 3px 10px;
+  border: 0;
+  padding: 0;
+}
+
+.title.separated {
+  margin-top: 50px;
+}
+
+.title .chinese {
+  display: block;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.logo {
+  margin-top: 30px;
+  width: 220px;
+  max-width: 100%;
+}
+
+.description {
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: -8px;
+}
 
 .address {
   margin-top: 30px;
@@ -612,33 +635,71 @@ main section + section {
   font-size: 14px;
 }
 
+main section.portfolio-box,
+main section.companies-box {
+  clear: none;
+  box-shadow: 0 15px 35px rgba(126,87,88,.14),0 5px 15px rgba(0,0,0,.07);
+  padding: 30px 25px;
+  border-radius: 5px;
+  margin-top: 0;
+}
+
+main section.portfolio-box {
+  background-color: #fff;
+}
+
+main section.companies-box {
+  margin-top: 55px;
+}
+
 .companies {
   counter-reset: companies;
   border-radius: 4px;
-  margin-top: -12px;
+  margin-top: -10px;
+
+  display: grid;
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+  grid-column-gap: 20px;
+  column-gap: 20px;
+  grid-row-gap: 10px;
+  row-gap: 10px;
 }
 
-.companies li {
-  padding: 12px 0;
+.portfolio-box .companies {
+  margin-bottom: -5px;
+}
+
+.companies li > a {
+  padding: 17px 15px;
   counter-increment: companies;
   position: relative;
-  padding-left: 47px;
+  padding-left: 85px;
+  overflow: hidden;
+  border-radius: 7px;
+  transition: all 0.2s ease;
 }
 
-.companies li + li {
-  border-top: 2px dotted;  
+.companies li > a {
+  display: block;
+}
+
+.companies li > a:hover {
+  background: #FFFDC0;
+  cursor: pointer;
+}
+
+.companies li > a:hover .logo {
+  border-color: #333;
 }
 
 .companies li .logo {
   display: inline-block;
-  height: 34px;
-  width: 34px;
+  height: 55px;
+  width: 55px;
   background: #f0f0f0;
   position: absolute;
-  left: 0;
-  top: -16px;
-  border-radius: 4px;
-
+  left: 10px;
+  top: -18px;
   box-sizing: border-box;
   border-radius: 50%;
   padding: 4px;
@@ -646,20 +707,31 @@ main section + section {
   /*box-shadow: 0 0 2px rgba(0,0,0,0.2);*/
   background: #fff;
   border: 2px solid #eee;
+  transition: all 0.2s ease;
 }
 
 .companies li .name {
   font-weight: 700;
   margin-bottom: 5px;
   display: block;
-  color: #CA0028;
+  color: #E20B36;
+  color: #222;
+  font-size: 19px;
 }
 
 .companies li .company-description {
+  font-size: 18.5px;
+  line-height: 1.2;
+  color: #444;
 }
 
 .info {
-  margin-top: 40px;
+  margin-top: 60px;
+  font-size: 18.5px;
+  /*background: #FFF8BF;*/
+  width: 240px;
+  border-radius: 5px;
+  color: #333;
 }
 
 .info a {
@@ -667,90 +739,312 @@ main section + section {
 }
 
 .info a:hover {
-  color: #CA0028;
+  color: #E20B36;
 }
 
 .what-is {
   font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
+  margin-bottom: 15px;
+  margin-top: -1px;
+  border-bottom: 2px dotted;
+  padding-bottom: 10px;
 }
 
 .email {
-  margin-top: 20px;
-  font-size: 16px;
+  margin-top: 15px;
 }
 
 .email:before {
   content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  float: left;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAArlBMVEUAAADKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACgw1NORAAAAOXRSTlMAAgMEBQYHCAkQFBUWHR4hJSYtOzxERUdJSktMTV5fY2lvcHFzdJKUnZ6wtLW+wMPF2uLk6+/z9feJS7yvAAAA+klEQVQ4y+3Uy1LCQBSE4X9MguGqxiuKBhUVUBACaPr9X8xFkCSQhFm4ocrezTnfZqamGg4jXvukMm0vcQ/am3uAG1nkGljawCU4kiZRFYomkhxcSX0zKHfPpi/JTSA0Z8Xsswk5CHfxLotvIQvHLoA/3HbDYwB3vIFanQMQLLJsEQBwsVIKpfc6wNFL6gYGoP6RnDZQCg1Aa32pWQvAhL/bDNT8FIBeLMU9AM7mKoLSaw3AH418gNpbZpWH+rpM/9TVt8qhNG0krDHNz3eg9GjAPG1PC6CiIP+epbAw//CvoGMHHfsCoGsDuwDhfheua69TXXsd70D6+wcukeTxKDXxKAAAAABJRU5ErkJggg==");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 9px;
+  margin-right: 10px;
+  vertical-align: middle;
+  margin-top: -1px;
 }
 
 .blog {
-  margin-top: 12px;
-  font-size: 16px;  
 }
 
 .blog:before {
   content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  float: left;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeBAMAAADJHrORAAAAKlBMVEUAAADKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACjKACgQB2yoAAAADXRSTlMAAQQQGUBiY2SR4OLkUa7gUQAAAGBJREFUGJVjYMy+iwDLBRjY7iKDAgZuFP4CBt67O2fCwOy7F4D8CQwwwEklvkcHCLTA+bFgu6/C+UJKIKCIUz+6enQ+unp086it3zQUBILJDA/U8EaPD/T4YuxB4m4XAACelMaiiagYUgAAAABJRU5ErkJggg==");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   margin-right: 9px;
+  vertical-align: middle;
+  margin-top: -1px;
 }
 
-@media only screen and (max-width: 1216px) {
+footer {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px 30px 40px;
+  box-sizing: border-box;
+  text-align: right;
+  font-size: 18.5px;
+  margin-top: -35px;
+  position: relative;
+  z-index: 4;
+}
+
+footer a + a,
+footer span + a {
+  margin-left: 30px;
+}
+
+footer a,
+footer span {
+  display: inline-block;
+  color: #444;
+}
+
+footer a:hover {
+  color: #E20B36;
+}
+
+footer .blog,
+footer .email {
+  margin-top: 0;
+}
+
+footer .blog:before,
+footer .email:before {
+  margin-top: 0;
+  margin-right: 7px;
+}
+
+@media only screen and (max-width: 1060px) {
   main {
-    width: calc(692px + 60px);
-  }
-
-  main section:first-child {
-    width: 230px;
-  }
-
-  main section:nth-child(2) {
-    width: 422px;
-  }
-
-  main section:nth-child(3) {
-    clear: both;
-    padding-left: 0;
-    margin-left: 0;
-    width: 100%;
+    width: auto;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   main {
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
   }
 
+  footer {
+    width: 100%;
+  }
+
+  .info {
+    width: auto;
+  }
+
+  .companies {
+    display: block;
+  }
+
+  main section {
+    overflow: hidden;
+  }
+
   main section:first-child,
   main section:nth-child(2),
-  main section:nth-child(3),
-  main section + section {
+  main section:nth-child(3) {
     float: none;
     width: 100%;
     margin-left: 0;
     padding: 0;
+    clear: both;
+  }
+
+  main section:nth-child(3) {
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(126,87,88,.14),0 5px 15px rgba(0,0,0,.07);
+    border-radius: 4px;
+    margin-top: 20px;
   }
 
   main section + section {
     margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  main {
+    padding: 25px 20px;
+  }
+
+  .title {
+    font-size: 26.5px;
+  }
+
+  .info {
+    /*padding: 15px 15px;*/
+  }
+
+  .walter {
+    width: 85px;
+    padding: 7px;
+  }
+
+  .about {
+    margin-left: 105px;
+    font-size: 18.5px;
+  }
+
+  .description {
+    font-size: 26px;
+  }
+
+  .info {
+    font-size: 18px;
+  }
+
+  .what-is {
+    font-size: 19px;
+  }
+
+  main section.companies-box {
+    margin-top: 50px;
+  }
+
+  main section.companies-box,
+  main section.portfolio-box {
+    padding: 20px;
+  }
+
+  .companies li > a:focus {
+    background: #FFF8BF;
+    cursor: pointer;
+  }
+
+  .companies li > a:focus .logo {
+    border-color: #333;
+  }
+
+  .companies li .company-description {
+    font-size: 18.5px;
+  }
+
+  footer {
+    text-align: left;
+    font-size: 17px;
+    padding-bottom: 30px;
+  }
+
+  footer a,
+  footer span {
+    display: block;
+    margin-top: 20px;
+  }
+
+  footer a + a,
+  footer span + a {
+    margin-left: 0;
+    margin-top: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .title {
+    font-size: 25.5px;
+  }
+
+  .description {
+    font-size: 25px;
+  }
+
+  .walter {
+    width: 80px;
+  }
+
+  .about {
+    margin-left: 100px;
+    font-size: 18.5px;
+  }
+
+  .companies li .company-description {
+    font-size: 18.5px;
+  }
+
+  main section.companies-box {
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  main {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .what-is {
+    font-size: 18px;
+  }
+
+  .info {
+    font-size: 17px;
+  }
+
+  .blog:before,
+  .email:before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .description {
+    font-size: 23px;
+  }
+
+  .walter {
+    width: 70px;
+    padding: 5px;
+  }
+
+  .about {
+    margin-left: 85px;
+    font-size: 17.5px;
+  }
+
+  main section.companies-box {
+    margin-top: 40px;
+  }
+
+  main section.companies-box,
+  main section.portfolio-box {
+    padding: 20px 15px;
+  }
+
+  .companies li .logo {
+    width: 45px;
+    height: 45px;
+    top: -14px;
+  }
+
+  .companies li > a {
+    padding-left: 70px;
+  }
+
+  .companies li .name {
+    font-size: 18px;
+  }
+
+  .companies li .company-description {
+    font-size: 17px;
+  }
+
+  footer {
+    font-size: 17px;
+    padding-bottom: 20px;
   }
 }
