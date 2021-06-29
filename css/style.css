@@ -659,6 +659,8 @@ main section.companies-box {
 
   display: grid;
   grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+  /*grid-template-rows: masonry;*/
+  /*grid-template-columns: repeat(2, 1fr);*/
   grid-column-gap: 20px;
   column-gap: 20px;
   grid-row-gap: 10px;
@@ -669,7 +671,7 @@ main section.companies-box {
   margin-bottom: -5px;
 }
 
-.companies li > a {
+.companies li .box {
   padding: 17px 15px;
   counter-increment: companies;
   position: relative;
@@ -679,16 +681,16 @@ main section.companies-box {
   transition: all 0.2s ease;
 }
 
-.companies li > a {
+.companies li .box {
   display: block;
 }
 
-.companies li > a:hover {
-  background: #FFFDC0;
-  cursor: pointer;
+.companies li .box:hover {
+  /*background: #FFFDC0;*/
+  /*cursor: pointer;*/
 }
 
-.companies li > a:hover .logo {
+.companies li .box:hover .logo {
   border-color: #333;
 }
 
@@ -699,7 +701,7 @@ main section.companies-box {
   background: #f0f0f0;
   position: absolute;
   left: 10px;
-  top: -18px;
+  top: -16px;
   box-sizing: border-box;
   border-radius: 50%;
   padding: 4px;
@@ -719,10 +721,48 @@ main section.companies-box {
   font-size: 19px;
 }
 
+.companies li .name a {
+  transition: all 0.1s ease;
+  vertical-align: middle;
+}
+
+.companies li .name a:hover {
+  color: #009eff;
+}
+
 .companies li .company-description {
   font-size: 18.5px;
   line-height: 1.2;
   color: #444;
+}
+
+.companies li .additional-info {
+  border-left: 2px solid;
+  padding-left: 10px;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.companies li .additional-info a {
+  color: #009eff;
+}
+
+.companies li .badge {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  font-size: 12.5px;
+  background: #009eff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.companies li .badge.ipo {
+  background: #48DB71;
 }
 
 .info {
@@ -920,12 +960,12 @@ footer .email:before {
     padding: 20px;
   }
 
-  .companies li > a:focus {
+  .companies li .box:focus {
     background: #FFF8BF;
     cursor: pointer;
   }
 
-  .companies li > a:focus .logo {
+  .companies li .box:focus .logo {
     border-color: #333;
   }
 
@@ -1031,7 +1071,7 @@ footer .email:before {
     top: -14px;
   }
 
-  .companies li > a {
+  .companies li .box {
     padding-left: 70px;
   }
 
