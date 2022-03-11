@@ -677,6 +677,7 @@ main section.companies-box {
 }
 
 .team li .face {
+  display: inline-block;
   width: 120px;
   margin-bottom: 10px;
   float: left;
@@ -686,21 +687,6 @@ main section.companies-box {
   /*box-shadow: 0 0 2px rgba(0,0,0,0.2);*/
   /*border: 3px dotted #E20B36;*/
   background-color: #f0f0f0;
-}
-
-.team li .teamabout {
-  font-size: 19px;
-  line-height: 1.35;
-  margin-left: 140px;
-  color: #222;
-}
-
-.team li .teamabout + .teamabout {
-  margin-top: 12px;
-}
-
-.team li .teamabout .highlight {
-  font-weight: 700;
 }
 
 .companies {
