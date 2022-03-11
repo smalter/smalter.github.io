@@ -656,6 +656,10 @@ main section.companies-box {
   counter-reset: team;
   border-radius: 4px;
   margin-top: -10px;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }  
 
 .companies {
