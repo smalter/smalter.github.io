@@ -652,6 +652,12 @@ main section.companies-box {
   margin-top: 55px;
 }
 
+.team {
+  counter-reset: team;
+  border-radius: 4px;
+  margin-top: -10px;
+}  
+
 .companies {
   counter-reset: companies;
   border-radius: 4px;
