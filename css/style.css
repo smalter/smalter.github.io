@@ -662,6 +662,21 @@ main section.companies-box {
   grid-template-rows: auto;
 }  
 
+.team li .box {
+  padding: 17px 15px;
+  counter-increment: companies;
+  position: relative;
+  padding-left: 85px;
+  overflow: hidden;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+}
+
+.team li .box {
+  display: block;
+}
+
+
 .companies {
   counter-reset: companies;
   border-radius: 4px;
