@@ -664,6 +664,7 @@ main section.companies-box {
 
 .team li .box {
   counter-increment: companies;
+  padding-bottom: 17px;
   position: relative;
   overflow: hidden;
   border-radius: 7px;
