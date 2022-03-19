@@ -663,10 +663,8 @@ main section.companies-box {
 }  
 
 .team li .box {
-  padding: 17px 15px;
   counter-increment: companies;
   position: relative;
-  padding-left: 85px;
   overflow: hidden;
   border-radius: 7px;
   transition: all 0.2s ease;
