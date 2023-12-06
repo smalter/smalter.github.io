@@ -801,6 +801,11 @@ main section.companies-box {
   background: #48DB71;
 }
 
+.companies li .badge.inactive {
+  background: #5A5A5A;
+}
+
+
 .info {
   margin-top: 60px;
   font-size: 18.5px;
